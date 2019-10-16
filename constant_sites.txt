@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+## setup using this code but instead with .sh extension
+## to make executable chmod +x constant_sites.sh
+
+
+# usage ./constant_sites.sh <fasta>
+
+FASTA=$1
+NUM=$(grep -v '>' "$FASTA" | tr -d -c "A" | wc -c)
+NUM2=$(grep -v '>' "$FASTA" | tr -d -c "a" | wc -c)
+NUM3=$(grep -v '>' "$FASTA" | tr -d -c "C" | wc -c)
+NUM4=$(grep -v '>' "$FASTA" | tr -d -c "c" | wc -c)
+NUM5=$(grep -v '>' "$FASTA" | tr -d -c "G" | wc -c)
+NUM6=$(grep -v '>' "$FASTA" | tr -d -c "g" | wc -c)
+NUM7=$(grep -v '>' "$FASTA" | tr -d -c "T" | wc -c)
+NUM8=$(grep -v '>' "$FASTA" | tr -d -c "t" | wc -c)
+
+echo "A: ${NUM}"
+echo "a: ${NUM2}"
+echo "C: ${NUM3}"
+echo "c: ${NUM4}"
+echo "G: ${NUM5}"
+echo "g: ${NUM6}"
+echo "T: ${NUM7}"
+echo "t: ${NUM8}"
